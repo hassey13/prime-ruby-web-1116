@@ -13,13 +13,11 @@ def prime?(num)
     counter = 2
     while prime && counter < num / 2 + 1
         range.each do |r|
-        	if !(range[counter])
-        		next
-        	end
-            if r * range[counter] == num
+            if r * counter == num
                 prime = false
             end
         end
+        break if counter * counter > num
         counter += 1
     end
     return prime
